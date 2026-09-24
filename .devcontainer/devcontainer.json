@@ -1,0 +1,10 @@
+{
+  "name": "AWS Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    "ghcr.io/devcontainers/features/aws-cli:1": {}
+  },
+
+  "postCreateCommand": "mkdir -p ~/.aws && printf '[default]\\naws_access_key_id=%s\\naws_secret_access_key=%s\\nregion=%s\\n' \"$AWS_ACCESS_KEY_ID\" \"$AWS_SECRET_ACCESS_KEY\" \"$AWS_DEFAULT_REGION\" > ~/.aws/credentials"
+}
